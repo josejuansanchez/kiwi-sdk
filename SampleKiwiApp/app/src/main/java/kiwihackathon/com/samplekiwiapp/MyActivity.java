@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.kiwiwearables.app.models.SensorReading;
 import com.kiwiwearables.app.services.IKiwiBinder;
 
 
@@ -71,7 +72,8 @@ public class MyActivity extends Activity {
                 Log.d(TAG, "service connected");
                 mKiwiService = IKiwiBinder.Stub.asInterface(service);
                 try {
-                    mKiwiService.sendData(5.5f);
+                    SensorReading reading = new SensorReading(new float[] {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f}, "test", "12");
+                    mKiwiService.sendData(reading);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
