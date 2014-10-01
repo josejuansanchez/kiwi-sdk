@@ -2,16 +2,25 @@ package kiwihackathon.com.samplekiwiapp;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.kiwiwearables.app.services.IKiwiBinder;
 
 
 public class MyActivity extends Activity {
+    private static final String TAG = MyActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +61,29 @@ public class MyActivity extends Activity {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        private static final String TAG = PlaceholderFragment.class.getSimpleName();
+
+        IKiwiBinder mKiwiService;
+
+        private ServiceConnection mConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                Log.d(TAG, "service connected");
+                mKiwiService = IKiwiBinder.Stub.asInterface(service);
+                try {
+                    mKiwiService.sendData(5.5f);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                Log.d(TAG, "service disconnected");
+            }
+        };
+
+
         public PlaceholderFragment() {
         }
 
@@ -59,6 +91,10 @@ public class MyActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_my, container, false);
+
+            Intent intent = new Intent(IKiwiBinder.class.getName());
+            getActivity().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+
             return rootView;
         }
     }
