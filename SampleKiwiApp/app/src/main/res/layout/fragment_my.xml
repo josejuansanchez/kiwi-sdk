@@ -9,8 +9,31 @@
     tools:context=".MyActivity$PlaceholderFragment">
 
     <TextView
-        android:text="@string/hello_world"
+        android:id="@+id/hello_world"
+        android:text="Check Logcat for output on button press"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/send_data_button"
+        android:layout_below="@id/hello_world"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Send data"/>
+
+    <Button
+        android:id="@+id/fetch_motions_button"
+        android:layout_below="@id/send_data_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Fetch motions" />
+
+    <Button
+        android:id="@+id/change_motion_button"
+        android:layout_below="@id/fetch_motions_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Modify motion"/>
+
 
 </RelativeLayout>
