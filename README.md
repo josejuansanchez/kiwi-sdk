@@ -4,9 +4,9 @@ Kiwi SDK
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
 
-For new Android developers: https://github.com/kiwiwearables/kiwi-sdk/wiki
+**For new Android developers**: https://github.com/kiwiwearables/kiwi-sdk/wiki
 
-Javadocs: http://kiwiwearables.github.io/kiwi-sdk/javadoc/
+**Javadocs**: http://kiwiwearables.github.io/kiwi-sdk/javadoc/
 
 Download
 --------
