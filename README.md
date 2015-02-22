@@ -20,7 +20,7 @@ repositories {
 
 Grab the AAR via Gradle:
 ```groovy
-compile 'com.kiwiwearables:kiwilib:0.3.1b
+compile 'com.kiwiwearables:kiwilib:0.3.1b'
 ```
 
 Examples
