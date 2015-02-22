@@ -22,7 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.kiwiwearables:kiwilib:0.3.1-build'
+    compile 'com.kiwiwearables:kiwilib:0.3.1b'
     compile 'com.google.android.gms:play-services-wearable:6.5.87'
 
     wearApp project(':wear')

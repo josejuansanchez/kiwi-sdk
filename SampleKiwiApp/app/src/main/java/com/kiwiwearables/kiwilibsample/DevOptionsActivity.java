@@ -1,8 +1,12 @@
 package com.kiwiwearables.kiwilibsample;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,8 +20,11 @@ import com.google.android.gms.wearable.MessageApi.SendMessageResult;
 import com.google.android.gms.wearable.Node;
 import com.google.android.gms.wearable.NodeApi.GetConnectedNodesResult;
 import com.google.android.gms.wearable.Wearable;
+import com.kiwiwearables.kiwilib.DetectionCallback;
+import com.kiwiwearables.kiwilib.DetectionInfo;
 import com.kiwiwearables.kiwilib.Kiwi;
 import com.kiwiwearables.kiwilib.LoggingOptions;
+import com.kiwiwearables.kiwilib.Motion;
 import com.kiwiwearables.kiwilib.SensorUnits;
 
 /**
@@ -38,6 +45,8 @@ public class DevOptionsActivity extends ActionBarActivity {
 
     public static class DevOptionsFragment extends Fragment {
 
+        private static final String TAG = DevOptionsFragment.class.getSimpleName();
+
         private Kiwi mKiwi;
         private GoogleApiClient mClient;
         private Node mWearNode;
@@ -56,7 +65,25 @@ public class DevOptionsActivity extends ActionBarActivity {
 
         private void setupKiwi() {
             mKiwi = Kiwi.with(getActivity());
-            mKiwi.setWebSocketOption(LoggingOptions.LOG_ONLY);
+
+            // fetch list of motions from the web
+            List<Motion> motions = mKiwi.getMotions();
+
+            // if there are any motions present, enable the first one
+            if (motions.size() > 0) {
+                List<String> enabledMotions = new ArrayList<>();
+                // enable the first motion in the motion list
+                enabledMotions.add(motions.get(0).motionId);
+                mKiwi.setEnabledMotions(enabledMotions);
+                mKiwi.setCallback(new DetectionCallback() {
+                    @Override
+                    public void onMotionDetected(DetectionInfo detectionInfo) {
+                        Log.d(TAG, detectionInfo.motion.motionName + " at " + detectionInfo.score);
+                    }
+                });
+            }
+
+            mKiwi.setWebSocketOption(LoggingOptions.LOG_ENABLED);
             mKiwi.setSensorUnits(SensorUnits.MS2_AND_RPS);
 
             mClient = new Builder(getActivity()).addApi(Wearable.API).build();
@@ -102,6 +129,5 @@ public class DevOptionsActivity extends ActionBarActivity {
                 }
             });
         }
-
     }
 }
