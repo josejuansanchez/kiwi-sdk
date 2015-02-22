@@ -13,9 +13,9 @@ Download
 Add our bintray repo to your repository list in gradle:
 ```groovy
 repositories {
-        jcenter()
-        maven { url 'http://dl.bintray.com/kiwiwearables/Kiwi-lib' }
-    }
+    jcenter()
+    maven { url 'http://dl.bintray.com/kiwiwearables/Kiwi-lib' }
+}
 ```
 
 Grab the AAR via Gradle:
