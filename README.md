@@ -2,7 +2,7 @@ Kiwi SDK <a href="https://plus.google.com/communities/112305505734943177774"><im
 ========
 *A motion recognition library for Android* 
 
-<br><br>
+<br>
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
 
