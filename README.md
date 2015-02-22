@@ -122,7 +122,7 @@ Sending Data to Kiwi library
 ----------------------------
 ```java
 // contains at least 6 values, 
-with the first three being accel x, y, z and the next three being gyro x, y, z
+// with the first three being accel x, y, z and the next three being gyro x, y, z
 float[] values = ...
 DataListener listener = kiwiInstance.mSensorDataListener.listener;
 if (listener != null) {
