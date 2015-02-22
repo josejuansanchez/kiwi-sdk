@@ -1,8 +1,7 @@
 Kiwi SDK
 ========
-*A motion recognition library for Android*
-
-<a href="https://plus.google.com/communities/112305505734943177774"><strong>Kiwi Wearables Developers</strong> on <img src="https://ssl.gstatic.com/images/icons/gplus-32.png" width="32" height="32" style="padding-left:12px; border: 0; vertical-align: bottom"></a>
+*A motion recognition library for Android* 
+<a href="https://plus.google.com/communities/112305505734943177774"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" width="32" height="32" style="padding-left:12px; border: 0; vertical-align: bottom"></a>
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
 
