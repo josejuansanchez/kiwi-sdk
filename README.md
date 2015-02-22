@@ -61,6 +61,8 @@ kiwiInstance.setEnabledMotions(motionIds);
 
 Sending Data to Kiwi library
 ----------------------------
+Detection engine will run when the sensor data is coming in.
+
 ```java
 // contains at least 6 values, 
 // with the first three being accel x, y, z and the next three being gyro x, y, z
@@ -133,5 +135,3 @@ Setting the debugging flag to true will print some debug log related to incoming
 ```java
 kiwiInstance.setDebugging(true);
 ```
-
-The analyzers will run when the sensor data is coming in.
