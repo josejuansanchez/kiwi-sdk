@@ -1,7 +1,6 @@
 Kiwi SDK
 ========
-
-A motion recognition library for Android
+*A motion recognition library for Android*
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
 
@@ -9,7 +8,23 @@ For new Android developers: https://github.com/kiwiwearables/kiwi-sdk/wiki
 
 Javadocs: http://kiwiwearables.github.io/kiwi-sdk/javadoc/
 
-A sample app would interface with the library in the following manner.
+Download
+--------
+Add our bintray repo to your repository list in gradle:
+```groovy
+repositories {
+        jcenter()
+        maven { url 'http://dl.bintray.com/kiwiwearables/Kiwi-lib' }
+    }
+```
+
+Grab the AAR via Gradle:
+```groovy
+compile 'com.kiwiwearables:kiwilib:0.3.1b
+```
+
+
+An app would interface with the library in the following manner.
 
 In the context of an activity or a service.
 Initializing the library
