@@ -27,14 +27,14 @@ Examples
 --------
 Check out the examples below that demonstrate how to use the library
 
-Initializing the library
-------------------------
+**Initializing the library**
+
 ```java
 Kiwi kiwiInstance = Kiwi.with(context);
 ```
 
-Authenticate your account
--------------------------
+**Authenticate your account**
+
 ```java
 kiwiInstance.initUser("ENTER USERNAME", "ENTER PASSWORD", new KiwiCallback() {
     @Override
@@ -43,14 +43,14 @@ kiwiInstance.initUser("ENTER USERNAME", "ENTER PASSWORD", new KiwiCallback() {
     }
 ```
 
-Fetching Motions
-----------------
+**Fetching Motions**
+
 ```java
 List<Motion> motions = kiwiInstance.getMotions();
 ```
 
-Enabling a subset of motions
-----------------------------
+**Enabling a subset of motions**
+
 You can explicitly enable a subset of loaded motions by sending the Kiwi instance a list of motion IDs to enable. You can get motion IDs from the list of motions as mentioned above.
 
 ```java
@@ -59,8 +59,8 @@ motionIds.add("56be80d09aaf873552ae73a33b964278"); // bicep curl
 kiwiInstance.setEnabledMotions(motionIds);
 ```
 
-Sending Data to Kiwi library
-----------------------------
+**Sending Data to Kiwi library**
+
 Detection engine will run when the sensor data is coming in.
 
 ```java
