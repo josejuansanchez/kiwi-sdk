@@ -6,7 +6,7 @@ Kiwi SDK <a href="https://plus.google.com/communities/112305505734943177774"><im
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
 
-**For new Android developers**: https://github.com/kiwiwearables/kiwi-sdk/wiki/Instructions-for-integrating
+**For new Android developers**: https://github.com/kiwiwearables/kiwi-sdk/wiki/Instructions-for-new-Android-developers
 
 **Javadocs**: http://kiwiwearables.github.io/kiwi-sdk/javadoc/
 
