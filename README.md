@@ -59,8 +59,20 @@ motionIds.add("56be80d09aaf873552ae73a33b964278"); // bicep curl
 kiwiInstance.setEnabledMotions(motionIds);
 ```
 
-Setters
--------
+Sending Data to Kiwi library
+----------------------------
+```java
+// contains at least 6 values, 
+// with the first three being accel x, y, z and the next three being gyro x, y, z
+float[] values = ...
+DataListener listener = kiwiInstance.mSensorDataListener.listener;
+if (listener != null) {
+    listener.onDataReceived(values);
+}
+```
+
+Library options
+---------------
 ```java
 kiwiInstance.setSensorUnit(SensorUnits.MS2_AND_RPS);
 kiwiInstance.setCallback(mMotionCallback);
@@ -69,6 +81,7 @@ kiwiInstance.setDebugging(true);
 ```
 
 **Sensor Units**
+
 The Kiwi library expects you to specify what the units of your sensor data are. There are currently two options:
 * Acceleration in ms^2 and Gyroscopic rotation in rad/s
 * (**DEFAULT**) Acceleration in Gs and Gyroscopic rotation in deg/s
@@ -80,6 +93,7 @@ kiwiInstance.setSensorUnits(SensorUnits.MS2_AND_RPS);
 ```
 
 **Detection callback**
+
 The Kiwi library needs to know how to let the app know when it has detected a motion. For this reason, there is a DetectionInfo class containing the Motion object as well as the detection score (in float).
 
 There is also onScoreAvailable, which provides a way to get scores as they are calculated by the library. You may or may not override this method as you see fit.
@@ -102,6 +116,7 @@ kiwiInstance.setCallback(mMotionCallback);
 
 
 **Web socket logging**
+
 You can also use our Developer panel to monitor the sensor data being sent to the library. There are three options: 
 * LOG_ONLY: Log the data and not run the detection engine
 * LOG_ENABLED: Log as well as run the detection engine
@@ -112,22 +127,11 @@ kiwiInstance.setWebSocketOption(LoggingOptions.LOG_ONLY);
 ```
 
 **Debugging**
+
 Setting the debugging flag to true will print some debug log related to incoming data and its detection. It will also send a buffer of data to our servers every time a motion is successfully detected. This is to allow us to troubleshoot your specific issues swiftly.
 
 ```java
 kiwiInstance.setDebugging(true);
-```
-
-Sending Data to Kiwi library
-----------------------------
-```java
-// contains at least 6 values, 
-// with the first three being accel x, y, z and the next three being gyro x, y, z
-float[] values = ...
-DataListener listener = kiwiInstance.mSensorDataListener.listener;
-if (listener != null) {
-    listener.onDataReceived(values);
-}
 ```
 
 The analyzers will run when the sensor data is coming in.
