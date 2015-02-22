@@ -23,10 +23,10 @@ Grab the AAR via Gradle:
 compile 'com.kiwiwearables:kiwilib:0.3.1b
 ```
 
+Examples
+--------
+Check out the examples below that demonstrate how to use the library
 
-An app would interface with the library in the following manner.
-
-In the context of an activity or a service.
 Initializing the library
 ------------------------
 ```java
