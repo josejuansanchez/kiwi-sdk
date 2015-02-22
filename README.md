@@ -100,7 +100,7 @@ kiwiInstance.setSensorUnits(SensorUnits.MS2_AND_RPS);
 
 The Kiwi library needs to know how to let the app know when it has detected a motion. For this reason, there is a DetectionInfo class containing the Motion object as well as the detection score (in float).
 
-There is also onScoreAvailable, which provides a way to get scores as they are calculated by the library. You may or may not override this method as you see fit.
+There is also ```onScoreAvailable```, which provides a way to get scores as they are calculated by the library. You may or may not override this method as you see fit.
 
 ```java
 DetectionCallback mMotionCallback = new DetectionCallback() {
