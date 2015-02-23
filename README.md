@@ -4,6 +4,10 @@ Kiwi SDK <a href="https://plus.google.com/communities/112305505734943177774"><im
 
 <br>
 
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 Register here: http://developer.kiwiwearables.com
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
