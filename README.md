@@ -44,6 +44,8 @@ Kiwi kiwiInstance = Kiwi.with(context);
 
 **Authenticate your account**
 
+With the same credentials as your Kiwiwearables account.
+
 ```java
 kiwiInstance.initUser("ENTER USERNAME", "ENTER PASSWORD", new KiwiCallback() {
     @Override
