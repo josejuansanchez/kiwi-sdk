@@ -3,11 +3,6 @@ Kiwi SDK <a href="https://plus.google.com/communities/112305505734943177774"><im
 *A motion recognition library for Android* 
 
 <br>
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-```
-
 Register here: http://developer.kiwiwearables.com
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
@@ -29,6 +24,12 @@ repositories {
 Grab the AAR via Gradle:
 ```groovy
 compile 'com.kiwiwearables:kiwilib:0.3.1b'
+```
+
+This library makes use of the internet to communicate with our web APIs so you'll need to specify internet permission in your manifest.
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
 Examples
