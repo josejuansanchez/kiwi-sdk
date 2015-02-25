@@ -161,12 +161,12 @@ public class DataLoggerActivity extends ActionBarActivity {
                     extras.put("ball_speed", speed.getText().toString());
                     extras.put("ball_length", length.getText().toString());
 
-                    mKiwi.stopDataCapture(motionName.getText().toString(),
-                                          age.getText().toString(),
-                                          height.getText().toString(),
-                                          skill.getText().toString(),
-                                          handedness,
-                                          extras);
+//                    mKiwi.stopDataCapture(motionName.getText().toString(),
+//                                          age.getText().toString(),
+//                                          height.getText().toString(),
+//                                          skill.getText().toString(),
+//                                          handedness,
+//                                          extras);
                 }
             });
         }
@@ -176,7 +176,7 @@ public class DataLoggerActivity extends ActionBarActivity {
             mKiwi.initUser("testing@kiwiwearables.com", "testing123", new KiwiCallback() {
                 @Override
                 public void onUserInit() {
-                    mKiwi.setDataCaptureEnabled(true);
+//                    mKiwi.setDataCaptureEnabled(true);
                     mKiwi.setWebSocketOption(LoggingOptions.LOG_ONLY);
                     mKiwi.setSensorUnits(SensorUnits.MS2_AND_RPS);
                 }
