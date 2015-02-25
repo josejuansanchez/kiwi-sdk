@@ -282,7 +282,8 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 
                { ax, ay, az, gx, gy, gz }</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - Thrown if detected engine is not available for some reason. One way to resolve it would be to call <a href="../../../com/kiwiwearables/kiwilib/Kiwi.html#with-android.content.Context-"><code>with(android.content.Context)</code></a> and try again. Usually, this state should not occur.</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - Thrown if the length of the points array is shorter than expected (6) as mentioned above.</dd>
 </dl>
 </li>
 </ul>
