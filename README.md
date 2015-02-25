@@ -77,10 +77,7 @@ Detection engine will run when the sensor data is coming in.
 // contains at least 6 values, 
 // with the first three being accel x, y, z and the next three being gyro x, y, z
 float[] values = ...
-DataListener listener = kiwiInstance.mSensorDataListener.listener;
-if (listener != null) {
-    listener.onDataReceived(values);
-}
+kiwiInstance.sendData(values);
 ```
 
 Library options
