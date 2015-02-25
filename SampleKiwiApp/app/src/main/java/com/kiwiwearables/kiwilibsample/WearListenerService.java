@@ -46,7 +46,7 @@ public class WearListenerService extends WearableListenerService {
             floatBuffer.get(values);
 
             Kiwi kiwi = Kiwi.with(this);
-            kiwi.mSensorDataListener.listener.onDataReceived(values);
+            kiwi.sendData(values);
 
         }
 
