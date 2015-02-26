@@ -38,9 +38,10 @@
                     <ul class="nav nav-tabs" id="navbar">
                         <li><a id="intro-link" href="#intro">Introduction</a></li>
                         <li><a id="features-link" href="#features">Features</a></li>
-                        <li><a id="download-link" href="#download">Download</a></li>
+                        <li><a id="download-link" href="#download">How to use</a></li>
                         <li><a id="contact-link" href="#contact">Contact</a></li>
-                        <li><a href="javadoc/index.html">Javadoc</a></li>
+                        <li><a target="_blank" href="javadoc/index.html">Javadoc</a></li>
+                        <li><a target="_blank" href="https://developer.kiwiwearables.com">Dev Portal</a></li>
                     </ul>
                 </nav>
             </header>
@@ -54,19 +55,25 @@
                     </header>
                     <section id="intro">
                         <h3>Introduction</h3>
-                        <p>This library allows you to recognize short motions with your wearable device. Let the users have a completely different interactive experience with your app.</p>
+                        <p>This library allows you to recognize short motions with your wearable device. Create and edit motions on the <a target="_blank" href="https://developer.kiwiwearables.com">developer portal</a>, and use the library to recognize motions in your app.</p>
                     </section>
+                </article>
+                    <aside>
+                        <div id="incomingToast" class="toast">INCOMING CALL</div>
+                        <div id="declineToast" class="toast">CALL DECLINED</div>
+                        <img src="img/call_declined.gif">
+
+                        <p>An example use case for motion recognition</p>
+                    </aside>
+                <article>
                     <section id="features">
                         <h3>Features</h3>
                         <ul>
                             <li>
-                                Compatible with any internet-of-things device with an accelerometer and gyroscope (supports ms<sup>2</sup> & rad/s, and G & deg/s out of the box).
+                                Compatible with any device with an accelerometer and gyroscope.
                             </li>
                             <li>
-                                Create and edit custom motions to recognize with our detection engine, on the web and the Android library.
-                            </li>
-                            <li>
-                                Time-saving tools to test created motions
+                                Motion simulator to quickly test your recorded motions.
                             </li>
                             <li>
                                 Automatic data and network management. Don't have to worry about making requests to our servers for anything.
@@ -74,7 +81,7 @@
                         </ul>
                     </section>
                     <section id="download">
-                        <h3>Download</h3>
+                        <h3>How to use</h3>
                         <p>
                             Add our bintray repo to your repository list in build.gradle.
                             <pre class="prettyprint">
@@ -86,16 +93,16 @@ repositories {
                             Grab the AAR via Gradle:
                             <pre class="prettyprint">compile 'com.kiwiwearables:kiwilib:0.3.1b'</pre>
 
-                            A sample app utilizing this library and getting sensor data from Android Wear is <a href="http://github.com/kiwiwearables/kiwi-sdk">available on GitHub</a>.
+                            <p>This library makes use of the internet to communicate with our web APIs so you'll need to specify internet permission in your manifest.</p>
+
+                            <pre class="prettyprint lang-html">
+&lt;uses-permission android:name="android.permission.INTERNET" /></pre>
+
+
+                            A sample app utilizing this library and getting sensor data from Android Wear is <a target="_blank" href="http://github.com/kiwiwearables/kiwi-sdk">available on GitHub</a>.
                         </p>
                     </section>
                 </article>
-
-                <aside>
-                    <div id="incomingToast" class="toast">INCOMING CALL</div>
-                    <div id="declineToast" class="toast">CALL DECLINED</div>
-                    <img src="img/call_declined.gif">
-                </aside>
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
@@ -112,6 +119,10 @@ repositories {
                     <li><i class="fa fa-phone-square"></i><a href="tel:1-800-936-5604">1-800-936-5604</a></li>
                 </ul>
 
+                <ul class="social-icons">
+                    <li><a href="https://plus.google.com/communities/112305505734943177774"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://www.facebook.com/groups/857413480986152/"><i class="fa fa-facebook"></i></a></li>       
+                </ul>
                 <img class="logo" src="img/kiwi_logo_white.png"/>
             </div>
         </div>

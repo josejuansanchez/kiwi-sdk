@@ -87,13 +87,18 @@ body {
 }
 
 .logo {
-    margin-top: 96px;
+    margin-top: 60px;
     width: 64px;
     margin-bottom: 24px;
 }
 
 aside img {
     width: 420px;
+}
+
+aside p {
+    font-size: 12px;
+    text-align: center;
 }
 
 .toast {
@@ -309,6 +314,41 @@ section#intro {
     color: white;
 }
 
+.social-icons {
+    margin-top: 60px;
+    padding-left: 0px;
+}
+
+.social-icons a {
+  background-clip: padding-box;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    margin-right: 5px;
+    font-size: 24px;
+    text-align: center;
+    background: #3fa07a;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    border-radius: 50%;
+    padding-top: 12px;
+    margin-left: 5px;
+}
+
+.social-icons li .fa {
+    color: #FFFFFF;
+}
+
+.social-icons a:hover {
+    color: #FFFFFF;
+    background-color: #38886C;
+}
 /* ==============
     MOBILE: Menu
    ============== */
@@ -420,15 +460,24 @@ pre {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 640px) {
 
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
 
+   .header-container {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                width: 100%;
+                box-shadow: 0 5px 10px #aaa;
+                z-index: 1;
+                position: fixed;
+    }
+
     nav a {
         float: left;
-        width: 17%;
+        width: 15%;
         margin-bottom: 0;
         font-weight: normal;
         margin: 0 5px;
@@ -440,6 +489,11 @@ pre {
 
     nav li:last-child a {
         margin-right: 0;
+    }
+
+    aside p {
+        margin-left: 30%;
+        text-align: center;
     }
 
 /* ========================
@@ -485,7 +539,7 @@ pre {
 
     nav {
         float: right;
-        width: 50%;
+        width: 60%;
     }
 
 /* ============
@@ -498,7 +552,7 @@ pre {
     }
 
     .main aside {
-        width: 40%;
+        width: 38%;
         float: right;
     }
 }
