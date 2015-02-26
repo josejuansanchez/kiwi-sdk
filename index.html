@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300" rel="stylesheet" type="text/css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
@@ -30,12 +31,12 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="header-container" data-spy="affix">
+        <div class="header-container">
             <header class="wrapper clearfix">
                 <img class="logo" src="img/kiwi_logo.png"/>
                 <h1 class="title">Kiwi SDK</h1>
                 <nav>
-                    <ul id="navbar" class="nav nav-tabs">
+                    <ul id="navbar">
                         <li><a id="intro-link" href="#intro">Introduction</a></li>
                         <li><a id="features-link" href="#features">Features</a></li>
                         <li><a id="download-link" href="#download">Download</a></li>
@@ -90,6 +91,12 @@ repositories {
                         </p>
                     </section>
                 </article>
+
+                <aside>
+                    <div id="incomingToast" class="toast">INCOMING CALL</div>
+                    <div id="declineToast" class="toast">CALL DECLINED</div>
+                    <img src="img/call_declined.gif">
+                </aside>
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->

@@ -2,7 +2,7 @@ var main = function() {
     // $('body').scrollspy();
 
     $('#intro-link').smoothScroll({
-        offset: -136
+        offset: -176
     });
     $('#features-link').smoothScroll({
         offset: -90

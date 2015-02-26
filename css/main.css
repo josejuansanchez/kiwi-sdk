@@ -91,14 +91,182 @@ body {
     margin-right: 0.7em
 }
 
-.footer-container,
-.main aside {
+aside img {
+    width: 420px;
 }
 
+.toast {
+    font-family: "Roboto", sans-serif;
+    background-color: #00BD9B;
+    border-radius: 2px;
+    width: 180px;
+    height: 32px;
+    padding-top: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-left: 256px;
+    opacity: 0;
+ }
+
+ #incomingToast {
+    position: absolute;
+    -webkit-animation: incoming 7.5s ease 0s infinite; /* Chrome, Safari, Opera */
+    -moz-animation: incoming 7.5s ease 0s infinite; /* Firefox */
+    animation: incoming 7.5s ease 0s infinite;
+ }
+
+#declineToast {
+    background-color: #C7274A;
+    color: #FFFFFF;
+    position: absolute;
+    -webkit-animation: decline 7.5s ease 0s infinite; /* Chrome, Safari, Opera */
+    -moz-animation: decline 7.5s ease 0s infinite; /* Firefox */
+    animation: decline 7.5s ease 0s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes incoming {
+    0% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+    10% {
+        opacity: 1;
+        margin-left: 0px
+    }
+    50% {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    60% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes decline {
+    0% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+    75% {
+        opacity: 0;
+        margin-left: 256px
+    }
+    83% {
+        opacity: 1;
+        margin-left: 0px
+    }
+    92% {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    100% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+}
+
+/* Firefox */
+@-moz-keyframes incoming {
+    0% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+    10% {
+        opacity: 1;
+        margin-left: 0px
+    }
+    50% {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    60% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+}
+
+/* Firefox */
+@-moz-keyframes decline {
+    0% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+    75% {
+        opacity: 0;
+        margin-left: 256px
+    }
+    83% {
+        opacity: 1;
+        margin-left: 0px
+    }
+    92% {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    100% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+}
+
+/* Standard */
+@keyframes incoming {
+    0% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+    10% {
+        opacity: 1;
+        margin-left: 0px
+    }
+    50% {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    60% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+}
+
+/* Standard */
+@keyframes decline {
+    0% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+    75% {
+        opacity: 0;
+        margin-left: 256px
+    }
+    83% {
+        opacity: 1;
+        margin-left: 0px
+    }
+    92% {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    100% {
+        opacity: 0;
+        margin-left: 256px;
+    }
+}
+ 
 article > header > h3 {
     color: #888888;
     font-style: italic;
     margin-top: 0px;
+}
+
+section#intro {
+  margin-top: 48px;
 }
 
 .footer-container > .wrapper > h3 {
@@ -126,8 +294,7 @@ article > header > h3 {
 }
 
 .header-container,
-.footer-container,
-.main aside {
+.footer-container {
     background: #56bc94;
 }
 
@@ -186,7 +353,6 @@ nav a:hover {
 }
 
 .main aside {
-    color: white;
     padding: 0px 5% 10px;
 }
 
@@ -234,14 +400,11 @@ pre {
     color: #666 !important;
 }
 
-
-
-
-
-
-
-
-
+#features ul li {
+   margin-bottom: 10px;
+   list-style-image: url('../img/bullet.png');
+   list-style-position: outside;
+}
 
 
 
@@ -291,13 +454,18 @@ pre {
     WIDE: CSS3 Effects
    ==================== */
 
-    .header-container,
-    .main aside {
+    .header-container {
         -webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
                 width: 100%;
                 box-shadow: 0 5px 10px #aaa;
                 z-index: 1;
+                position: fixed;
+    }
+
+    .main aside {
+                width: 100%;
+                margin-top: 48px;
     }
 
 /* ============
@@ -323,8 +491,8 @@ pre {
     }
 
     .main aside {
+        width: 40%;
         float: right;
-        width: 28%;
     }
 }
 
