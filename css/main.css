@@ -56,11 +56,12 @@ textarea {
 }
 
 a {
-    color: #4AA380;
     text-decoration: none;
+    color: #4AA380;
 }
 
 a:hover {
+    color: #37795F;
     text-decoration: underline;
 }
 
@@ -86,9 +87,9 @@ body {
 }
 
 .logo {
-    float: left;
-    margin-top: 0.9em;
-    margin-right: 0.7em
+    margin-top: 96px;
+    width: 64px;
+    margin-bottom: 24px;
 }
 
 aside img {
@@ -291,6 +292,11 @@ section#intro {
 .footer-container > .wrapper > ul > li a {
   color: #317b5e;
   text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.footer-container > .wrapper > ul > li a:hover {
+  color: #225742;
 }
 
 .header-container,
@@ -315,11 +321,11 @@ nav ul {
 nav a {
     display: block;
     margin-bottom: 10px;
-
     text-align: center;
     text-decoration: none;
-
     color: white;
+    -webkit-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
 }
 
 .nav-tabs > li.active > a,
@@ -357,11 +363,11 @@ nav a:hover {
 }
 
 .footer-container div {
-    color: white;
     text-align: center;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 80px;
     margin: 0;
+    color: white;
 }
 
 div .copyright {
