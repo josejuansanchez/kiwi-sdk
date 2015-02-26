@@ -97,8 +97,8 @@ aside img {
 }
 
 .toast {
-    font-family: "Roboto", sans-serif;
-    background-color: #00BD9B;
+    font-family: 'Roboto', sans-serif;
+    background-color: #3f3f3f;
     border-radius: 2px;
     width: 180px;
     height: 32px;
@@ -114,13 +114,14 @@ aside img {
 
  #incomingToast {
     position: absolute;
+    background-color: #00BD9B;
     -webkit-animation: incoming 7.5s ease 0s infinite; /* Chrome, Safari, Opera */
     -moz-animation: incoming 7.5s ease 0s infinite; /* Firefox */
     animation: incoming 7.5s ease 0s infinite;
  }
 
 #declineToast {
-    background-color: #C7274A;
+    background-color: #FE1743;
     color: #FFFFFF;
     position: absolute;
     -webkit-animation: decline 7.5s ease 0s infinite; /* Chrome, Safari, Opera */

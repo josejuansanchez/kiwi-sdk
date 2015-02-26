@@ -1,5 +1,5 @@
 var main = function() {
-    // $('body').scrollspy();
+    $('body').scrollspy();
 
     $('#intro-link').smoothScroll({
         offset: -176

@@ -217,7 +217,7 @@ if (typeof jQuery === 'undefined') {
   ScrollSpy.VERSION  = '3.3.2'
 
   ScrollSpy.DEFAULTS = {
-    offset: 90
+    offset: 120
   }
 
   ScrollSpy.prototype.getScrollHeight = function () {
