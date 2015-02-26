@@ -108,7 +108,6 @@ aside img {
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
-    margin-left: 256px;
     opacity: 0;
  }
 
@@ -124,6 +123,7 @@ aside img {
     background-color: #FE1743;
     color: #FFFFFF;
     position: absolute;
+    margin-left: 0px;
     -webkit-animation: decline 7.5s ease 0s infinite; /* Chrome, Safari, Opera */
     -moz-animation: decline 7.5s ease 0s infinite; /* Firefox */
     animation: decline 7.5s ease 0s infinite;
@@ -139,13 +139,13 @@ aside img {
         opacity: 1;
         margin-left: 0px
     }
-    50% {
+    60% {
         opacity: 1;
         margin-left: 0px;
     }
-    60% {
+    100% {
         opacity: 0;
-        margin-left: 256px;
+        margin-left: 0px;
     }
 }
 
@@ -153,23 +153,23 @@ aside img {
 @-webkit-keyframes decline {
     0% {
         opacity: 0;
-        margin-left: 256px;
+        /*margin-left: 256px;*/
     }
     75% {
         opacity: 0;
-        margin-left: 256px
+        /*margin-left: 256px*/
     }
     83% {
         opacity: 1;
-        margin-left: 0px
+        /*margin-left: 0px*/
     }
     92% {
         opacity: 1;
-        margin-left: 0px;
+        /*margin-left: 0px;*/
     }
     100% {
         opacity: 0;
-        margin-left: 256px;
+        /*margin-left: 256px;*/
     }
 }
 
@@ -197,23 +197,23 @@ aside img {
 @-moz-keyframes decline {
     0% {
         opacity: 0;
-        margin-left: 256px;
+        /*margin-left: 256px;*/
     }
     75% {
         opacity: 0;
-        margin-left: 256px
+        /*margin-left: 256px*/
     }
     83% {
         opacity: 1;
-        margin-left: 0px
+        /*margin-left: 0px*/
     }
     92% {
         opacity: 1;
-        margin-left: 0px;
+        /*margin-left: 0px;*/
     }
     100% {
         opacity: 0;
-        margin-left: 256px;
+        /*margin-left: 256px;*/
     }
 }
 
@@ -241,23 +241,23 @@ aside img {
 @keyframes decline {
     0% {
         opacity: 0;
-        margin-left: 256px;
+        /*margin-left: 256px;*/
     }
     75% {
         opacity: 0;
-        margin-left: 256px
+        /*margin-left: 256px*/
     }
     83% {
         opacity: 1;
-        margin-left: 0px
+        /*margin-left: 0px*/
     }
     92% {
         opacity: 1;
-        margin-left: 0px;
+        /*margin-left: 0px;*/
     }
     100% {
         opacity: 0;
-        margin-left: 256px;
+        /*margin-left: 256px;*/
     }
 }
  
