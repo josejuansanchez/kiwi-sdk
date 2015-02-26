@@ -10,7 +10,7 @@ var main = function() {
     $('#download-link').smoothScroll({
         offset: -90
     });
-    $('#contact-link').smoothScroll({
+    $('.contact-link').smoothScroll({
         offset: -90
     });
 };
