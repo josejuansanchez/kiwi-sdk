@@ -1,6 +1,7 @@
 package com.kiwiwearables.kiwilibsample;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.kiwiwearables.kiwilib.Kiwi;
 import com.kiwiwearables.kiwilib.KiwiCallback;
@@ -57,7 +59,21 @@ public class LoginActivity extends ActionBarActivity {
                             startActivity(new Intent(getActivity(), DevOptionsActivity.class));
                             getActivity().finish();
                         }
+
+                        @Override
+                        public void onError(Throwable throwable) {
+                            Toast.makeText(getActivity(), "Error occured on login", Toast.LENGTH_SHORT).show();
+                        }
                     });
+                }
+            });
+
+            Button signupButton = (Button) rootView.findViewById(R.id.signup);
+            signupButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://developer.kiwiwearables.com"));
+                    startActivity(intent);
                 }
             });
         }

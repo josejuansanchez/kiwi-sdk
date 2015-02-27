@@ -3,7 +3,26 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:padding="8dp"
               android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="18dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Make sure your Android Wear device is connected. Then press start to send data to the developer portal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="18dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="When you have recorded at least one motion, tap the refresh icon in the ActionBar and see if it gets detected in the logcat" />
 
     <Button
         android:id="@+id/start"

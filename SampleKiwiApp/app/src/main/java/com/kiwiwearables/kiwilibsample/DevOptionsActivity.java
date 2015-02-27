@@ -8,6 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -25,6 +28,7 @@ import com.kiwiwearables.kiwilib.DetectionInfo;
 import com.kiwiwearables.kiwilib.Kiwi;
 import com.kiwiwearables.kiwilib.LoggingOptions;
 import com.kiwiwearables.kiwilib.Motion;
+import com.kiwiwearables.kiwilib.RefreshMotionCallback;
 import com.kiwiwearables.kiwilib.SensorUnits;
 
 /**
@@ -51,37 +55,59 @@ public class DevOptionsActivity extends ActionBarActivity {
         private GoogleApiClient mClient;
         private Node mWearNode;
         private boolean started;
+        private List<Motion> mMotions;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_devoptions, container, false);
 
+            setHasOptionsMenu(true);
             setupKiwi();
 
             setupUi(rootView);
             return rootView;
         }
 
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+            inflater.inflate(R.menu.menu_main, menu);
+            super.onCreateOptionsMenu(menu, inflater);
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.action_refresh:
+                    mKiwi.refreshMotions(new RefreshMotionCallback() {
+                        @Override
+                        public void onMotionRefresh(List<Motion> motions) {
+                            mMotions = motions;
+                            enableFirstMotion();
+                        }
+
+                        @Override
+                        public void onError(Throwable throwable) {
+
+                        }
+                    });
+                    break;
+            }
+            return super.onOptionsItemSelected(item);
+        }
+
         private void setupKiwi() {
             mKiwi = Kiwi.with(getActivity());
 
             // fetch list of motions from the web
-            List<Motion> motions = mKiwi.getMotions();
-
-            // if there are any motions present, enable the first one
-            if (motions.size() > 0) {
-                List<String> enabledMotions = new ArrayList<>();
-                // enable the first motion in the motion list
-                enabledMotions.add(motions.get(0).motionId);
-                mKiwi.setEnabledMotions(enabledMotions);
-                mKiwi.setCallback(new DetectionCallback() {
-                    @Override
-                    public void onMotionDetected(DetectionInfo detectionInfo) {
-                        Log.d(TAG, detectionInfo.motion.motionName + " at " + detectionInfo.score);
-                    }
-                });
-            }
+            mMotions = mKiwi.getMotions();
+            enableFirstMotion();
+            mKiwi.setCallback(new DetectionCallback() {
+                @Override
+                public void onMotionDetected(DetectionInfo detectionInfo) {
+                    Log.d(TAG, detectionInfo.motion.motionName + " at " + detectionInfo.score);
+                }
+            });
 
             mKiwi.setWebSocketOption(LoggingOptions.LOG_ENABLED);
             mKiwi.setSensorUnits(SensorUnits.MS2_AND_RPS);
@@ -90,6 +116,22 @@ public class DevOptionsActivity extends ActionBarActivity {
             mClient.connect();
         }
 
+        // if there are any motions present, enable the first one
+        private void enableFirstMotion() {
+            if (mMotions.size() > 0) {
+                List<String> enabledMotions = new ArrayList<>();
+                // enable the first motion in the motion list
+                enabledMotions.add(mMotions.get(0).motionId);
+                mKiwi.setEnabledMotions(enabledMotions);
+            }
+        }
+
+        /**
+         * Clicking the start button sends a message to the wear app
+         * to send its sensor data to WearListenerService on the phone app.
+         *
+         * There, that data is sent to the library for motion recognition
+         */
         private void setupUi(View rootView) {
             final Button startButton = (Button) rootView.findViewById(R.id.start);
 

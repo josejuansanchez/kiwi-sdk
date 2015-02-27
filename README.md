@@ -22,7 +22,7 @@ repositories {
 
 Grab the AAR via Gradle:
 ```groovy
-compile 'com.kiwiwearables:kiwilib:0.3.1b'
+compile 'com.kiwiwearables:kiwilib:0.3.1'
 ```
 
 This library makes use of the internet to communicate with our web APIs so you'll need to specify internet permission in your manifest.
