@@ -4,7 +4,7 @@ Kiwi SDK <a href="https://plus.google.com/communities/112305505734943177774"><im
   
 Register here: http://developer.kiwiwearables.com
 
-The first 1000 motion detections are free, once you utilize more than this please contact use for our commercial terms of use.
+The first 1000 motion detections are free, after this we will contact you about our commercial terms of use. If you would like to discuss terms of use prior to trying out, please contact us.
 
 Contact info@kiwiwearables.com if you are looking to integrate into a commercial product. Terms and Conditions apply.
 
