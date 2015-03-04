@@ -14,7 +14,7 @@ Contact info@kiwiwearables.com if you are looking to integrate into a commercial
 
 Demo
 ----
-<a href="https://play.google.com/store/apps/details?id=https://play.google.com/store/apps/details?id=com.kiwiwearables.kiwilibsample">
+<a href="https://play.google.com/store/apps/details?id=com.kiwiwearables.kiwilibsample">
   <img alt="Get it on Google Play"
        src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
